@@ -14,7 +14,9 @@ scores = [50000, 800, 600, 500, 400]
 scores_log = [math.log(score) for score in scores]
 
 data = []
+# Pass scores_log to x but pass scores to labels
 data.append(go.Bar(x=scores_log[::-1], y=names[::-1],
+				   # Remember to use original data for labels for readability
 	               textposition='auto', text=scores[::-1],
 	               orientation='h',
 	               textfont=dict(color='white')))
