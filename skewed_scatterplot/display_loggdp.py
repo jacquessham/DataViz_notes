@@ -25,9 +25,11 @@ data.append(go.Scatter(x=df['Population'],
 				hoverinfo='text',
 				mode='markers'))
 # Layout
-layout = {'title':{'text':'Nations\' GDP vs Population', 'x':0.5},
-			'xaxis': {'gridcolor': 'lightgray','type':'log'},
-			'yaxis': {'gridcolor': 'lightgray','type':'log'},
+layout = {'title':{'text':'Territories\' GDP vs Population', 'x':0.5},
+			'xaxis': {'title':'Population', 'gridcolor': 'lightgray',
+				'type':'log'},
+			'yaxis': {'title':'GDP ($)', 'gridcolor': 'lightgray',
+			'type':'log'},
 			'plot_bgcolor': 'rgba(0,0,0,0)'}
 
 fig = go.Figure(data=data, layout=layout)
