@@ -13,10 +13,17 @@ df = df_gdp.merge(df_pop,how='left',on='Territory')
 
 # Data
 data = []
-data.append(go.Scatter(x=df['Population'], y=df['Nominal_GDP'],
+for region in df['Region'].unique():
+	data.append(go.Scatter(x=df['Population'], y=df['Nominal_GDP'],
+					marker_color='red',
+					text=df['Territory'],
+					hoverinfo='text',
 					mode='markers'))
 # Layout
-layout = {'title':{'text':'Nations\' GDP vs Population', 'x':0.5}}
+layout = {'title':{'text':'Nations\' GDP vs Population', 'x':0.5},
+			'xaxis': {'gridcolor': 'lightgray'},
+			'yaxis': {'gridcolor': 'lightgray'},
+			'plot_bgcolor': 'rgba(0,0,0,0)'}
 
 fig = go.Figure(data=data, layout=layout)
 
