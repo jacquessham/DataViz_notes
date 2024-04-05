@@ -1,3 +1,4 @@
+import math
 import pandas as pd
 import plotly
 import plotly.graph_objs as go
@@ -15,16 +16,18 @@ df = df_gdp.merge(df_pop,how='left',on='Territory')
 colors = {'Americas':'Red', 'Europe':'Blue', 'Asia':'Orange',
 			'Africa':'Green', 'Oceania':'Purple'}
 df['color'] = [colors[region] for region in df['Region'].tolist()]
+
 data = []
-data.append(go.Scatter(x=df['Population'], y=df['Nominal_GDP'],
+data.append(go.Scatter(x=df['Population'], 
+				y=df['Nominal_GDP'],
 				marker_color=df['color'],
 				text=df['Territory'],
 				hoverinfo='text',
 				mode='markers'))
 # Layout
 layout = {'title':{'text':'Nations\' GDP vs Population', 'x':0.5},
-			'xaxis': {'gridcolor': 'lightgray'},
-			'yaxis': {'gridcolor': 'lightgray'},
+			'xaxis': {'gridcolor': 'lightgray','type':'log'},
+			'yaxis': {'gridcolor': 'lightgray','type':'log'},
 			'plot_bgcolor': 'rgba(0,0,0,0)'}
 
 fig = go.Figure(data=data, layout=layout)
