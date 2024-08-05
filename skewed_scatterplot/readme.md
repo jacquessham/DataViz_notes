@@ -1,5 +1,5 @@
 # Skewed Scatterplot
-When the data is very skewed, it is very hard to read on the scatterplot. It is a similar situation to a skewed bar chart. In order to fix it, we may take a logarithm to the data to reduce the skewness effect. This folder contains the notes and script for this Medium <a href="">post (Coming soon)</a>.
+When the data is very skewed, it is very hard to read on the scatterplot. It is a similar situation to a skewed bar chart. In order to fix it, we may take a logarithm to the data to reduce the skewness effect. This folder contains the notes and script for this Medium <a href="https://medium.com/gitconnected/skewed-data-on-a-scatterplot-854980ee9f55">post</a>.
 <br><br>
 One classic example is to plot the relationship between GDP and population. If we plot the dataset directly, it will look like this:
 <img src=gdp.png>
